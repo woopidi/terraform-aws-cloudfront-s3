@@ -6,7 +6,7 @@ resource "aws_cloudfront_distribution" "cloudfront" {
   enabled      = true
   price_class  = "PriceClass_200"
   http_version = "http1.1"
-  aliases      = var.domain_name
+  aliases      = concat([var.domain_name], var.other_domains)
 
   origin {
     origin_id   = "origin-bucket-${aws_s3_bucket.bucket.id}"

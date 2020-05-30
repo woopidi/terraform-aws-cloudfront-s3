@@ -1,5 +1,8 @@
 variable "domain_name" {
+}
 
+variable "other_domains" {
+  type = list(string)
 }
 
 variable "region" {
