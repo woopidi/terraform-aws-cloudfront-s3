@@ -3,6 +3,7 @@ variable "domain_name" {
 
 variable "other_domains" {
   type = list(string)
+  default = []
 }
 
 variable "region" {
