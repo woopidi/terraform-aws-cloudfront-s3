@@ -14,3 +14,7 @@ variable "region" {
 variable "cert_arn" {
 
 }
+
+variable "bucket_policy" {
+  default = ""
+}

@@ -15,5 +15,6 @@ module "example" {
 {
     donmain_name    = module.example.cloudfront_domain_name
     zone_id         = module.example.cloudfront_hosted_zone_id
+    bucket_arn      = module.example.bucket_arn
 }
 ```

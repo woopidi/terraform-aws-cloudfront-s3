@@ -32,5 +32,5 @@ data "aws_iam_policy_document" "bucket_policy" {
 
 resource "aws_s3_bucket_policy" "policy_attachment" {
   bucket = aws_s3_bucket.bucket.id
-  policy = data.aws_iam_policy_document.bucket_policy.json
+  policy = concat(data.aws_iam_policy_document.bucket_policy.json, var.bucket_policy)
 }
