@@ -15,6 +15,6 @@ variable "cert_arn" {
 
 }
 
-variable "bucket_policy" {
-  default = ""
-}
+# variable "bucket_users" {
+#   default = ""
+# }
