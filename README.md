@@ -1,8 +1,8 @@
-# CloudFront S3
+# Terraform AWS CloudFront S3 Module
 
 ```sh
 module "example" {
-    source          = "git::https://gitlab.woopidi.net/terraform/cloudfront-s3.git"
+    source          = "git@github.com:woopidi/terraform-aws-cloudfront-s3.git"
     domain_names    = ["app.example.com"]
     cert_arn        = "...cert arn"
 }
