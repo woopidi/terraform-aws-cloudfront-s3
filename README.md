@@ -8,13 +8,14 @@ module "example" {
     // Optional
     bucket_policies = [
       {
-        sid: ''
+        sid: "John"
         type: "AWS"
-        identifiers: ["a", "b"]
-        actions: ["a", "b"]
-        resources: ["a", "b"]
+        identifiers: [
+          "arn:aws:iam::42732433292:user/John"
+        ]
+        actions: ["s3:*"]
       }
-    ]
+  ]
 }
 
 ```

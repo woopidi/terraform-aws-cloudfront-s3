@@ -21,7 +21,6 @@ variable "bucket_policies" {
       type = string
       identifiers = list(string)
       actions = list(string)
-      resources = list(string)
   }))
 
   default = []

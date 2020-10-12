@@ -35,7 +35,7 @@ data "aws_iam_policy_document" "bucket_policy" {
     content {
       sid       = statement.value.sid
       actions   = statement.value.actions
-      resources = statement.value.resources
+      resources = [aws_s3_bucket.bucket.arn, "${aws_s3_bucket.bucket.arn}/*"]
 
       principals {
         type = statement.value.type
