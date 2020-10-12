@@ -15,6 +15,14 @@ variable "cert_arn" {
 
 }
 
-# variable "bucket_users" {
-#   default = ""
-# }
+variable "bucket_policies" {
+  type = list(object({
+      sid = string
+      type = string
+      identifiers = list(string)
+      actions = list(string)
+      resources = list(string)
+  }))
+
+  default = []
+}

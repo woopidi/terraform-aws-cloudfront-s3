@@ -29,19 +29,18 @@ data "aws_iam_policy_document" "bucket_policy" {
     }
   }
 
-  statement {
-    sid       = "user"
-    actions   = ["s3:*"]
-    resources = [
-      aws_s3_bucket.bucket.arn,
-      "${aws_s3_bucket.bucket.arn}/*"
-    ]
+  dynamic "statement" {
+    for_each = var.bucket_policies
 
-    principals {
-      type = "AWS"
-      identifiers = [
-        "arn:aws:iam::427326037592:user/bitname_wordpress"
-      ]
+    content {
+      sid       = statement.value.sid
+      actions   = statement.value.actions
+      resources = statement.value.resources
+
+      principals {
+        type = statement.value.type
+        identifiers = statement.value.identifiers
+      }
     }
   }
 }

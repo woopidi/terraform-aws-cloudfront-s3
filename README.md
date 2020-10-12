@@ -5,6 +5,16 @@ module "example" {
     source          = "git@github.com:woopidi/terraform-aws-cloudfront-s3.git"
     domain_names    = ["app.example.com"]
     cert_arn        = "...cert arn"
+    // Optional
+    bucket_policies = [
+      {
+        sid: ''
+        type: "AWS"
+        identifiers: ["a", "b"]
+        actions: ["a", "b"]
+        resources: ["a", "b"]
+      }
+    ]
 }
 
 ```
