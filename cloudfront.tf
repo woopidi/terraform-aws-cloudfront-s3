@@ -4,7 +4,7 @@ resource "aws_cloudfront_origin_access_identity" "origin_access_identity" {
 
 resource "aws_cloudfront_distribution" "cloudfront" {
   enabled      = true
-  price_class  = "PriceClass_200"
+  price_class  = "PriceClass_All"
   http_version = "http2"
   aliases      = concat([var.domain_name], var.other_domains)
 
